@@ -7,6 +7,7 @@
     <style>
         :root,body {
             margin: 0;
+            ransform: scale(1.2);
         }
         /*滚动条整体样式*/
         .chat-ls::-webkit-scrollbar {
@@ -22,32 +23,28 @@
         }
         nav{
             position: fixed;
-            width: 90px;
+            width: 70px;
             height: 100%;
             left: 0;
             top: 0;
             background: #FFFFFF;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0 20px rgb(0 0 0 / 25%);
             border-radius: 0 10px 10px 0;
             z-index: 9999999999999;
         }
         .chat-ls{
-            /* position: fixed; */
-            width: 430px;
+            width: 350px;
             height: calc(100% - 0px);
             background: #F8FBFF;
-            margin-left: 85px;
+            margin-left: 65px;
             overflow-y: auto;
             overflow-x: hidden;
-            /* margin: auto; */
         }
         .chat-window{
-            width: calc(100% - 515px);
+            width: calc(100% - 415px);
             position: unset;
-            /* margin-left: 515px; */
             height: 100%;
             display: flex;
-            /* margin-left: 515px; */
             flex-direction: column;
             overflow: hidden;
         }
@@ -58,44 +55,42 @@
         }
         .chat-ls > .user-card{
             background: #FFFFFF;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0 10px rgb(0 0 0 / 25%);
             border-radius: 10px;
-            width: 375px;
-            height: 110px;
+            width: 290px;
+            height: 85px;
             margin: 15px 30px;
             display: flex;
         }
         .chat-ls > .user-card > img {
             border-radius: 100%;
-            width: 90px;
-            height: 90px;
+            width: 65px;
+            height: 65px;
             margin: 10px;
             box-shadow: 0 0 10px #96969640;
         }
         .chat-ls > .user-card > div > .user-name {
-            font-size: 23px;
+            font-size: 19px;
         }
         .chat-ls > .user-card > div > p{
-            overflow:hidden;
+            overflow: hidden;
             font-style: normal;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 39px;
+            font-size: 15px;
             display: flex;
             align-items: center;
             margin: 0;
         }
         .chat-ls > .user-card > div{
             white-space: nowrap;
-            width: 245px;
-            padding: 15px 0 15px 10px;
+            width: 185px;
+            padding: 20px 0 20px 10px;
         }
         header{
             display: block;
             position: fixed;
-            width: calc(100% - 85px);
-            height: 100px;
-            left: 85px;
+            width: calc(100% - 65px);
+            height: 70px;
+            left: 65px;
             top: 0;
             background: #FFFFFF;
             box-shadow: 20px 0 20px rgb(0 0 0 / 25%);
@@ -105,75 +100,78 @@
         .message-input{
             width: 100%;
             height: 300px;
-            /* position: unset; */
             background: #fff;
             border-radius: 10px;
             margin-top: -5px;
             box-shadow: 0 0 20px rgb(0 0 0 / 25%);
+        }
+        .@me{
+            background: #0085FF;
+            border-radius: 30px;
+            height: 50px;
+            display: block;
+            padding: 3px;
+            width: 0;
+            margin: auto 0;
+        }
+        main{
+            top: 70px;
+            position: fixed;
+            height: 100%;
+            display: flex;
+            width: 100%;
         }
     </style>
 </head>
 <body>
 <nav></nav>
 <header></header>
-<main style="    top: 100px;
-    position: fixed;
-    height: 100%;
-    display: flex;
-    width: 100%;">
-<div class="chat-ls">
-    <div class="user-card">
-        <div style="
-    background: #0085FF;
-    border-radius: 30px;
-    height: 50px;
-    display: block;
-    padding: 3px;
-    width: 0;
-    margin: auto 0;
-"></div>
-        <img src="https://img.yt-blog.top/png/big_logo.png">
-        <div>
-        <p class="user-name">
-            阳光下的小宁宁
-        </p>
-            <p>[@我]@动荡的初二少年 测试</p>
+<main>
+    <div class="chat-ls">
+        <div class="user-card">
+            <div class="@me"></div>
+            <img src="https://img.yt-blog.top/png/big_logo.png">
+            <div>
+                <p class="user-name">
+                    阳光下的小宁宁
+                </p>
+                <p>[@我]@动荡的初二少年 测试</p>
+            </div>
+        </div>
+        <div class="user-card">
+            <img src="https://img.yt-blog.top/png/big_logo.png">
+            <div>
+                <p class="user-name">
+                    阳光下的小宁宁
+                </p>
+                <p>[@我]@动荡的初二少年 测试</p>
+            </div>
+        </div>
+        <div class="user-card">
+            <img src="https://img.yt-blog.top/png/big_logo.png">
+            <div>
+                <p class="user-name">
+                    阳光下的小宁宁
+                </p>
+                <p>[@我]@动荡的初二少年 测试</p>
+            </div>
+        </div>
+        <div class="user-card">
+            <img src="https://img.yt-blog.top/png/big_logo.png">
+            <div>
+                <p class="user-name">
+                    阳光下的小宁宁
+                </p>
+                <p>[@我]@动荡的初二少年 测试</p>
+            </div>
         </div>
     </div>
-    <div class="user-card">
-        <img src="https://img.yt-blog.top/png/big_logo.png">
-        <div>
-            <p class="user-name">
-                阳光下的小宁宁
-            </p>
-            <p>[@我]@动荡的初二少年 测试</p>
+    <div class="chat-window">
+        <div class="message-ls" id="message-ls">
+            <message></message>
         </div>
+        <div class="message-input"></div>
     </div>
-    <div class="user-card">
-        <img src="https://img.yt-blog.top/png/big_logo.png">
-        <div>
-            <p class="user-name">
-                阳光下的小宁宁
-            </p>
-            <p>[@我]@动荡的初二少年 测试</p>
-        </div>
-    </div>
-    <div class="user-card">
-        <img src="https://img.yt-blog.top/png/big_logo.png">
-        <div>
-            <p class="user-name">
-                阳光下的小宁宁
-            </p>
-            <p>[@我]@动荡的初二少年 测试</p>
-        </div>
-    </div>
-</div>
-<div class="chat-window">
-    <div class="message-ls" id="message-ls">
-        <message></message>
-    </div>
-    <div class="message-input"></div>
-</div>
 </main>
 </body>
 </html>
