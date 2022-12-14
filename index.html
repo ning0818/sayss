@@ -105,8 +105,17 @@
             margin-top: -5px;
             box-shadow: 0 0 20px rgb(0 0 0 / 25%);
         }
-        .@me{
+         .this-tab>.this{
             background: #0085FF;
+            border-radius: 30px;
+            height: 50px;
+            display: block;
+            padding: 3px;
+            width: 0;
+            margin: auto 0;
+        }
+	.chat-ls > .user-card >.this{
+            background: #fff;
             border-radius: 30px;
             height: 50px;
             display: block;
@@ -121,8 +130,11 @@
             display: flex;
             width: 100%;
         }
-        p.tip span {
-	           color:#E5FF70;
+        p>.atme {
+	           color: #ffff00;
+	}
+        p>.atall {
+	           color: #1e90ff;
 	}
     </style>
 </head>
@@ -131,41 +143,44 @@
 <header></header>
 <main>
     <div class="chat-ls">
-        <div class="user-card">
-            <div class="@me"></div>
+        <div class="user-card  this-tab">
+            <div class="this"></div>
             <img src="https://www.yuanning0818.tk/logo.png">
             <div>
                 <p class="user-name">
                     阳光下的小宁宁
                 </p>
-                <p class="tip"><span>[@我]</span>@动荡的初二少年 测试</p>
+                <p><span class="atme">[@我]</span>@动荡的初二少年 测试</p>
             </div>
         </div>
-        <div class="user-card">
-            <img src="https://img.yt-blog.top/png/big_logo.png">
-            <div>
-                <p class="user-name">
-                    阳光下的小宁宁
-                </p>
-                <p class="tip"><span>[@我]</span>@动荡的初二少年 测试</p>
-            </div>
-        </div>
-        <div class="user-card">
+        <div class="user-card this-tab">
+            <div class="this"></div>
             <img src="https://www.yuanning0818.tk/logo.png">
             <div>
                 <p class="user-name">
                     阳光下的小宁宁
                 </p>
-                <p class="tip"><span>[@我]</span>@动荡的初二少年 测试</p>
+                <p><span class="atme">[@我]</span>@动荡的初二少年 测试</p>
             </div>
         </div>
-        <div class="user-card">
-            <img src="https://img.yt-blog.top/png/big_logo.png">
+        <div class="user-card this-tab">
+            <div class="this"></div>
+            <img src="https://www.yuanning0818.tk/logo.png">
             <div>
                 <p class="user-name">
                     阳光下的小宁宁
                 </p>
-                <p class="tip"><span>[@我]</span>@动荡的初二少年 测试</p>
+                <p><span class="atme">[@我]</span>@动荡的初二少年 测试</p>
+            </div>
+        </div>
+        <div class="user-card this-tab">
+            <div class="this"></div>
+            <img src="https://www.yuanning0818.tk/logo.png">
+            <div>
+                <p class="user-name">
+                    阳光下的小宁宁
+                </p>
+                <p><span class="atme">[@我]</span>@动荡的初二少年 测试</p>
             </div>
         </div>
     </div>
