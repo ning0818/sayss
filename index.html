@@ -1,14 +1,14 @@
 <html>
 <head>
-    <title>聊天</title>
+    <title>聊天 - Ourchat</title>
     <meta content="" name="keywords">
     <meta content="" name="description">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <style>
-        :root,body {
+        :root, body {
             margin: 0;
-            ransform: scale(1.2);
         }
+
         /*滚动条整体样式*/
         .chat-ls::-webkit-scrollbar {
             /*高宽分别对应横竖滚动条的尺寸*/
@@ -21,7 +21,8 @@
             border-radius: 10px;
             background: rgba(136, 131, 131, 0.28);
         }
-        nav{
+
+        nav {
             position: fixed;
             width: 70px;
             height: 100%;
@@ -32,7 +33,8 @@
             border-radius: 0 10px 10px 0;
             z-index: 9999999999999;
         }
-        .chat-ls{
+
+        .chat-ls {
             width: 350px;
             height: calc(100% - 0px);
             background: #F8FBFF;
@@ -40,7 +42,8 @@
             overflow-y: auto;
             overflow-x: hidden;
         }
-        .chat-window{
+
+        .chat-window {
             width: calc(100% - 415px);
             position: unset;
             height: 100%;
@@ -48,12 +51,16 @@
             flex-direction: column;
             overflow: hidden;
         }
-        .message-ls{
+
+        .message-ls {
             width: 100%;
             background: #F8FBFF;
-            height: calc(100% - 295px);
+            height: calc(100% - 265px);
         }
-        .chat-ls > .user-card{
+
+        .chat-ls > .user-card {
+            user-select: none;
+            cursor: pointer;
             background: #FFFFFF;
             box-shadow: 0 0 10px rgb(0 0 0 / 25%);
             border-radius: 10px;
@@ -62,6 +69,7 @@
             margin: 15px 30px;
             display: flex;
         }
+
         .chat-ls > .user-card > img {
             border-radius: 100%;
             width: 65px;
@@ -69,10 +77,12 @@
             margin: 10px;
             box-shadow: 0 0 10px #96969640;
         }
+
         .chat-ls > .user-card > div > .user-name {
             font-size: 19px;
         }
-        .chat-ls > .user-card > div > p{
+
+        .chat-ls > .user-card > div > p {
             overflow: hidden;
             font-style: normal;
             font-size: 15px;
@@ -80,12 +90,14 @@
             align-items: center;
             margin: 0;
         }
-        .chat-ls > .user-card > div{
+
+        .chat-ls > .user-card > div {
             white-space: nowrap;
             width: 185px;
             padding: 20px 0 20px 10px;
         }
-        header{
+
+        header {
             display: block;
             position: fixed;
             width: calc(100% - 65px);
@@ -97,18 +109,45 @@
             border-radius: 0 0 10px 10px;
             z-index: 9999999999;
         }
-        .message-input{
+
+        .message-input {
             width: 100%;
-            height: 300px;
+            height: 270px;
             background: #fff;
-            border-radius: 10px;
+            border-radius: 10px 10px 0 0;
             margin-top: -5px;
             box-shadow: 0 0 20px rgb(0 0 0 / 25%);
+            overflow: hidden;
+
         }
-         .this-tab>.this{
+
+        .message-input > #msg-input {
+            width: 100%;
+            font-family: "Open Sans", "Fira Sans", "Lucida Sans", "Lucida Sans Unicode", "Trebuchet MS", "Liberation Sans", "Nimbus Sans L", sans-serif;
+            border: 0;
+            height: 100%;
+            resize: none;
+            font-size: 18px;
+            padding: 30px 10px;
+            outline: none;
+        }
+        .message-input>#send{
+            border: 0;
+            background: #1e90ff;
+            border-radius: 30px;
+            width: 50px;
+            height: 30px;
+            padding: 5px;
+            position: absolute;
+            z-index: 100;
+            right: 15px;
+            bottom: 15px;
+        }
+        .this-tab > .this {
             background: #0085FF !important;
         }
-	.chat-ls > .user-card >.this{
+
+        .chat-ls > .user-card > .this {
             background: #fff;
             border-radius: 30px;
             height: 50px;
@@ -117,24 +156,40 @@
             width: 0;
             margin: auto 0;
         }
-        main{
+
+        main {
             top: 70px;
             position: fixed;
-            height: 100%;
+            height: calc(100% - 70px);
             display: flex;
             width: 100%;
         }
-        p>.atme {
-	           color: #ffff00;
-	}
-        p>.atall {
-	           color: #1e90ff;
-	}
+
+        p > .atme {
+            color: #ffc800;
+        }
+
+        p > .atall {
+            color: #1e90ff;
+        }
+        header > #search{
+            border: 0;
+            outline: none;
+            background: #c0c0c052;
+            border-radius: 50px;
+            height: 30px;
+            margin: 20px;
+            display: block;
+            width: 300px;
+            padding: 3px 15px;
+        }
     </style>
 </head>
 <body>
 <nav></nav>
-<header></header>
+<header>
+    <input id="search">
+</header>
 <main>
     <div class="chat-ls">
         <div class="user-card  this-tab">
@@ -147,7 +202,7 @@
                 <p><span class="atme">[@我]</span>@动荡的初二少年 测试</p>
             </div>
         </div>
-        <div class="user-card this-tab">
+        <div class="user-card">
             <div class="this"></div>
             <img src="https://www.yuanning0818.tk/logo.png">
             <div>
@@ -157,7 +212,7 @@
                 <p><span class="atme">[@我]</span>@动荡的初二少年 测试</p>
             </div>
         </div>
-        <div class="user-card this-tab">
+        <div class="user-card">
             <div class="this"></div>
             <img src="https://www.yuanning0818.tk/logo.png">
             <div>
@@ -167,7 +222,7 @@
                 <p><span class="atme">[@我]</span>@动荡的初二少年 测试</p>
             </div>
         </div>
-        <div class="user-card this-tab">
+        <div class="user-card">
             <div class="this"></div>
             <img src="https://www.yuanning0818.tk/logo.png">
             <div>
@@ -178,11 +233,22 @@
             </div>
         </div>
     </div>
-    <div class="chat-window">
-        <div class="message-ls" id="message-ls">
+    <div class="chat-window" uid="">
+        <div id="message-ls" class="message-ls">
             <message></message>
         </div>
-        <div class="message-input"></div>
+        <div class="message-input">
+            <button id="send">
+                <svg class="icon" height="100%"
+                     viewBox="0 0 1024 1024" width="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M946.773333 93.198222c-24.832-32.398222-70.087111-43.932444-120.917333-30.336L147.100444 244.295111c-46.449778 12.458667-77.297778 38.940444-86.840888 74.581333-9.628444 35.939556 4.053333 74.709333 38.528 109.169778l253.411555 253.411556 243.882667 243.868444c27.079111 27.107556 57.045333 41.415111 86.613333 41.415111 45.866667 0 82.218667-33.607111 97.336889-89.912889l180.920889-678.229333c11.136-41.543111 6.115556-78.976-14.179556-105.400889z m-40.775111 90.695111L725.048889 862.136889c-3.854222 14.321778-15.687111 47.715556-42.368 47.715555-13.966222 0-30.449778-8.775111-46.392889-24.746666L412.529778 661.347556l170.965333-170.979556a28.444444 28.444444 0 1 0-40.220444-40.220444L372.309333 621.127111 139.008 387.84c-19.214222-19.214222-27.889778-38.983111-23.808-54.229333 4.010667-14.961778 21.006222-27.491556 46.620444-34.346667L840.590222 117.831111a103.992889 103.992889 0 0 1 26.581334-3.84c10.894222 0 25.699556 2.389333 34.474666 13.838222 9.272889 12.074667 10.808889 31.971556 4.352 56.064z"
+                          fill="#ffffff"></path>
+                    <path d="M742.855111 621.084444a14.307556 14.307556 0 0 0-17.365333 10.197334l-1.464889 5.589333a14.250667 14.250667 0 0 0 27.548444 7.182222l1.464889-5.603555a14.250667 14.250667 0 0 0-10.183111-17.365334zM732.145778 662.357333a14.222222 14.222222 0 0 0-17.351111 10.197334l-30.321778 116.750222a14.222222 14.222222 0 1 0 27.534222 7.139555l30.336-116.750222a14.236444 14.236444 0 0 0-10.197333-17.336889z"
+                          fill="#ffffff"></path>
+                </svg>
+            </button>
+            <textarea id="msg-input" placeholder="请输入消息……"></textarea>
+        </div>
     </div>
 </main>
 </body>
